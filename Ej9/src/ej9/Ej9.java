@@ -30,17 +30,32 @@ dado que 11 es menor que 13, entonces: el residuo es 11 y el cociente es 3.
     public static void main(String[] args) {
       Scanner leer = new Scanner (System.in);
       
-      int num1=0,num2=0,var=0;
+      int num1=0,num2=0,var=10000,cont=0;
       
         do {
             System.out.println("Ingrese el número 1 y 2");
             num1 = leer.nextInt();
             num2 = leer.nextInt();
             
+            if (num1<1 || num2<1) {
+                System.out.println("Error, ingrese un número mayor a 1");
+            }
             
+        } while (num1<1 || num2<1);
+       
+        while(var>num2)
+        {
+            cont = cont+1;
             
-        } while (true);
+            var = num1-num2;
+            System.out.print(num1+" - "+num2+" = "+var);
+            System.out.print(" "+cont+" resta realizada");
+            System.out.println("");
+        num1 = var;
         
+        }
+        
+        System.out.println("El residuo es = "+var+"\nEl cociente es = "+cont+"\n"+cont+" restas realizadas");
         
         
     }
